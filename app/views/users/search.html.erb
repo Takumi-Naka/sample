@@ -1,0 +1,16 @@
+<% provide(:title, 'All users') %>
+<h1>All user</h1>
+
+<ul class="users">
+  <%= render @users %>
+</ul>
+
+<ul class="users">
+  <% @users.each do |user| %>
+    <% if @user.microposts.any? %>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+    <% end %>
+  <% end %>
+</ul>
